@@ -8,7 +8,7 @@ from flask_cors import CORS
 from disease_info import disease_info  
 
 app = Flask(__name__)
-CORS(app)  
+CORS(app, origins=["https://agriverse-22076.web.app"])
 
 # Load model & class indices once at startup
 model = load_model('plant_disease_model.keras')
