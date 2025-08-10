@@ -12,10 +12,10 @@ with open('class_indices.json', 'r') as f:
 labels = {v: k for k, v in class_indices.items()}
 
 # Load and prepare the new image
-img_path = 'predict.JPG'  # put your new image path here
-img = image.load_img(img_path, target_size=(160, 160))  # same size you trained on
-x = image.img_to_array(img) / 255.0  # scale pixels like during training
-x = np.expand_dims(x, axis=0)  # add batch dimension
+img_path = 'predict.JPG'
+img = image.load_img(img_path, target_size=(160, 160))
+x = image.img_to_array(img) / 255.0  
+x = np.expand_dims(x, axis=0) 
 
 # Predict
 pred = model.predict(x)
