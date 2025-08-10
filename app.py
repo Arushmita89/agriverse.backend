@@ -23,6 +23,10 @@ def prepare_image(img_bytes):
     x = np.expand_dims(x, axis=0)
     return x
 
+@app.route('/')
+def home():
+    return "AgriVerse Backend API is running!"
+
 @app.route('/predict', methods=['POST'])
 def predict():
     if 'file' not in request.files:
